@@ -1,0 +1,22 @@
+[package]
+name = "defi"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+exclude.workspace = true
+
+[dev-dependencies]
+alloy.workspace = true
+eyre.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "macros"] }
+
+[lints]
+workspace = true
+
+[dependencies]
+dotenvy = "0.15.7"
