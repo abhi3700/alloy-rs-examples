@@ -1,10 +1,13 @@
+//! swap example
+
 use alloy::{
-    primitives::{Address, U256},
-    providers::{Provider, ProviderBuilder},
+    primitives::{aliases::U24, Address, U160, U256},
+    providers::ProviderBuilder,
     signers::local::PrivateKeySigner,
     sol,
 };
 use std::env;
+use ISwapRouter::ExactInputSingleParams;
 
 // sol! {
 //     interface IERC20 {
@@ -32,13 +35,12 @@ use std::env;
 //     }
 // }
 
-// TODO: add the corresponding artifacts.
 // Codegen from artifact.
 sol!(
     #[allow(missing_docs)]
     #[sol(rpc)]
-    IUniswapV3Router,
-    "examples/artifacts/IUniswapV3Router.json"
+    ISwapRouter,
+    "examples/artifacts/ISwapRouter.json"
 );
 
 sol!(
@@ -64,20 +66,18 @@ sol!(
 
 #[tokio::main]
 async fn main() -> eyre::Result<()> {
-    dotenvy::dotenv().ok();
-    let rpc_url = env::var("RPC_URL")?;
-    let private_key = env::var("PRIVATE_KEY")?; // must start with '0x'
+    dotenvy::dotenv().ok().expect("Please provide a .env file with ");
+    let rpc_url = env::var("RPC_URL").expect("Please provide RPC_URL");
+    let private_key = env::var("PRIVATE_KEY").expect("Please provide RPC_URL"); // must start with '0x'
 
     let signer: PrivateKeySigner = private_key.parse()?;
-    let provider = ProviderBuilder::new().wallet(signer).connect_http(rpc_url.parse()?);
+    let provider = ProviderBuilder::new().wallet(signer.clone()).connect_http(rpc_url.parse()?);
 
     // Contracts
-    let usdt = IERC20::new("0xdAC17F958D2ee523a2206206994597C13D831ec7".parse()?, signer.clone());
+    let usdt = IERC20::new("0xdAC17F958D2ee523a2206206994597C13D831ec7".parse()?, provider.clone());
     let usdc_addr: Address = "0xA0b86991C6218b36c1D19D4a2e9Eb0cE3606EB48".parse()?;
-    let router = IUniswapV3Router::new(
-        "0xE592427A0AEce92De3Edee1F18E0157C05861564".parse()?,
-        signer.clone(),
-    );
+    let router =
+        ISwapRouter::new("0xE592427A0AEce92De3Edee1F18E0157C05861564".parse()?, provider.clone());
     let quoter =
         IQuoter::new("0x61fFE014bA17989E743c5F6cB21bF9697530B21e".parse()?, provider.clone());
     let factory = IUniswapV3Factory::new(
@@ -89,14 +89,14 @@ async fn main() -> eyre::Result<()> {
     let token_b = usdc_addr;
 
     // Step 1: Find pool and fee tier
-    let fee_tiers = [100u32, 500, 3000];
+    let fee_tiers = [U24::from(100), U24::from(500), U24::from(3000)];
     let mut found_pool = None;
     let mut found_fee = None;
 
     for &fee in &fee_tiers {
-        let pool_addr = factory.getPool(token_a, token_b, fee).call().await?;
+        let pool_addr = factory.getPool(*token_a, token_b, fee).call().await?;
         if pool_addr != Address::ZERO {
-            println!("✅ Found pool at {} with fee {} ({}%)", pool_addr, fee, fee as f64 / 1e4);
+            println!("✅ Found pool at {} with fee {} ({}%)", pool_addr, fee, f64::from(fee) / 1e4);
             found_pool = Some(pool_addr);
             found_fee = Some(fee);
             break;
@@ -114,36 +114,37 @@ async fn main() -> eyre::Result<()> {
     // Step 2: Estimate output
     let amount_in = U256::from(10_000_000u64); // 10 USDT
     let estimated_out = quoter
-        .quoteExactInputSingle(token_a, token_b, fee, amount_in, U256::from(0))
+        .quoteExactInputSingle(*token_a, token_b, fee, amount_in, U160::from(0))
         .call()
         .await?;
     println!("Estimated USDC out: {}", estimated_out);
 
     let slippage = 1.0; // 1%
     let slippage_factor = 1.0 - (slippage / 100.0);
-    let amount_out_min = (estimated_out.as_u128() as f64 * slippage_factor) as u128;
+    let amount_out_min = (f64::from(estimated_out) * slippage_factor) as u128;
     println!("AmountOutMin (1% slippage): {}", amount_out_min);
 
     // Step 3: Approve Router
-    let approve_tx = usdt.approve(router.address(), amount_in).send().await?.await?;
-    println!("✅ Approved: {:?}", approve_tx.transaction_hash);
+    let approve_tx_receipt =
+        usdt.approve(*router.address(), amount_in).send().await?.get_receipt().await?;
+    println!("✅ Approved: {:?}", approve_tx_receipt.transaction_hash);
 
     let now = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH)?.as_secs();
 
     // Step 4: Swap
-    let params = (
-        token_a,
-        token_b,
+    let params = ExactInputSingleParams {
+        tokenIn: *token_a,
+        tokenOut: token_b,
         fee,
-        signer.address(),
-        (now + 300) as u64,
-        amount_in,
-        U256::from(amount_out_min),
-        U256::from(0),
-    );
+        recipient: signer.address(),
+        deadline: U256::from(now + 300),
+        amountIn: amount_in,
+        amountOutMinimum: U256::from(amount_out_min),
+        sqrtPriceLimitX96: U160::from(0),
+    };
 
-    let swap_tx = router.exactInputSingle(params).send().await?.await?;
-    println!("✅ Swap complete: {:?}", swap_tx.transaction_hash);
+    let swap_tx_receipt = router.exactInputSingle(params).send().await?.get_receipt().await?;
+    println!("✅ Swap complete: {:?}", swap_tx_receipt.transaction_hash);
 
     Ok(())
 }
