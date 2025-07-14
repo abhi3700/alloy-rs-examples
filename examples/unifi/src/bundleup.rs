@@ -1,7 +1,3 @@
-// use crate::bundleup::ISignatureTransfer::SignatureTransferDetails;
-// use crate::bundleup::ISignatureTransfer::{
-//     PermitBatchTransferFrom, SignatureTransferDetails, TokenPermissions,
-// };
 use crate::{
     bundleup::ISignatureTransfer::SignatureTransferDetails,
     permit2::{find_next_unused_nonce, Permit2},

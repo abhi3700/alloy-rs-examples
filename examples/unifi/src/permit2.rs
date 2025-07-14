@@ -34,31 +34,12 @@ sol! {
         uint256 amount;
     }
 
-    struct PermitTransferFrom {
-        TokenPermissions permitted;
-        address spender;
-        uint256 nonce;
-        uint256 deadline;
-    }
 
     struct PermitBatchTransferFrom {
         TokenPermissions[] permitted;
         address spender;
         uint256 nonce;
         uint256 deadline;
-    }
-}
-
-impl From<PermitTransferFrom> for ISignatureTransfer::PermitTransferFrom {
-    fn from(val: PermitTransferFrom) -> Self {
-        Self {
-            permitted: ISignatureTransfer::TokenPermissions {
-                token: val.permitted.token,
-                amount: val.permitted.amount,
-            },
-            nonce: val.nonce,
-            deadline: val.deadline,
-        }
     }
 }
 
