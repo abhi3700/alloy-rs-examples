@@ -1,4 +1,8 @@
 //! Example of how to transfer ERC20 tokens from one account to another using a signed permit.
+//!
+//! Using Signature Transfer approach. NOTE:  Usage:
+//! 1. token.approve by Alice
+//! 2. permit2.permitTransferFrom by Bob
 
 use alloy::{
     network::EthereumWallet,

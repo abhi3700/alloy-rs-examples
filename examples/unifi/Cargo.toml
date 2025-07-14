@@ -1,0 +1,21 @@
+[package]
+name = "unifi"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+exclude.workspace = true
+
+[dependencies]
+alloy = { workspace = true, features = ["eip712"]}
+eyre.workspace = true
+rand.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "macros"] }
+dotenvy = "0.15.7"
+
+[lints]
+workspace = true

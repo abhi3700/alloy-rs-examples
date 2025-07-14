@@ -1,0 +1,832 @@
+{
+    "abi": [
+        {
+            "type": "constructor",
+            "inputs": [
+                {
+                    "name": "_relayers",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                },
+                {
+                    "name": "_permit2",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "batchPaymentMSMT",
+            "inputs": [
+                {
+                    "name": "relayerIndex",
+                    "type": "uint16",
+                    "internalType": "uint16"
+                },
+                {
+                    "name": "tokens",
+                    "type": "address[]",
+                    "internalType": "contract ERC20[]"
+                },
+                {
+                    "name": "froms",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                },
+                {
+                    "name": "tos",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                },
+                {
+                    "name": "amounts",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "batchPaymentSSMT",
+            "inputs": [
+                {
+                    "name": "relayerIndex",
+                    "type": "uint16",
+                    "internalType": "uint16"
+                },
+                {
+                    "name": "tokens",
+                    "type": "address[]",
+                    "internalType": "contract ERC20[]"
+                },
+                {
+                    "name": "from",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "tos",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                },
+                {
+                    "name": "amounts",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "batchPaymentSSST",
+            "inputs": [
+                {
+                    "name": "relayerIndex",
+                    "type": "uint16",
+                    "internalType": "uint16"
+                },
+                {
+                    "name": "token",
+                    "type": "address",
+                    "internalType": "contract ERC20"
+                },
+                {
+                    "name": "from",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "tos",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                },
+                {
+                    "name": "amounts",
+                    "type": "uint256[]",
+                    "internalType": "uint256[]"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "permit2",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "relayers",
+            "inputs": [
+                {
+                    "name": "",
+                    "type": "uint16",
+                    "internalType": "uint16"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "setRelayer",
+            "inputs": [
+                {
+                    "name": "callerRelayerIndex",
+                    "type": "uint16",
+                    "internalType": "uint16"
+                },
+                {
+                    "name": "relayerIndex",
+                    "type": "uint16",
+                    "internalType": "uint16"
+                },
+                {
+                    "name": "relayer",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "setRelayers",
+            "inputs": [
+                {
+                    "name": "callerRelayerIndex",
+                    "type": "uint16",
+                    "internalType": "uint16"
+                },
+                {
+                    "name": "relayerIndices",
+                    "type": "uint16[]",
+                    "internalType": "uint16[]"
+                },
+                {
+                    "name": "_relayers",
+                    "type": "address[]",
+                    "internalType": "address[]"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "singlePaymentSSSTSR",
+            "inputs": [
+                {
+                    "name": "relayerIndex",
+                    "type": "uint16",
+                    "internalType": "uint16"
+                },
+                {
+                    "name": "token",
+                    "type": "address",
+                    "internalType": "contract ERC20"
+                },
+                {
+                    "name": "from",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "to",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "singlePaymentSSSTSRPermit",
+            "inputs": [
+                {
+                    "name": "relayerIndex",
+                    "type": "uint16",
+                    "internalType": "uint16"
+                },
+                {
+                    "name": "from",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "permit",
+                    "type": "tuple",
+                    "internalType": "struct ISignatureTransfer.PermitBatchTransferFrom",
+                    "components": [
+                        {
+                            "name": "permitted",
+                            "type": "tuple[]",
+                            "internalType": "struct ISignatureTransfer.TokenPermissions[]",
+                            "components": [
+                                {
+                                    "name": "token",
+                                    "type": "address",
+                                    "internalType": "address"
+                                },
+                                {
+                                    "name": "amount",
+                                    "type": "uint256",
+                                    "internalType": "uint256"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "nonce",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        },
+                        {
+                            "name": "deadline",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "name": "transferDetails",
+                    "type": "tuple[]",
+                    "internalType": "struct ISignatureTransfer.SignatureTransferDetails[]",
+                    "components": [
+                        {
+                            "name": "to",
+                            "type": "address",
+                            "internalType": "address"
+                        },
+                        {
+                            "name": "requestedAmount",
+                            "type": "uint256",
+                            "internalType": "uint256"
+                        }
+                    ]
+                },
+                {
+                    "name": "signature",
+                    "type": "bytes",
+                    "internalType": "bytes"
+                }
+            ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "error",
+            "name": "InvalidRelayer",
+            "inputs": []
+        },
+        {
+            "type": "error",
+            "name": "ZeroAddress",
+            "inputs": []
+        }
+    ],
+    "bytecode": {
+        "object": "0x60a06040523461016f57610ca68038038061001981610187565b92833981019060408183031261016f5780516001600160401b03811161016f5781019180601f8401121561016f578251926001600160401b038411610173578360051b9060208061006b818501610187565b80978152019282010192831161016f57602001905b8282106101575784610094602086016101ac565b6001600160a01b03811615610129576080525f5b81519061ffff811691821015610138576001600160a01b036100ca83856101c0565b5116156101295761ffff916001600160a01b036100e782866101c0565b5116905f525f60205260405f209060018060a01b03198254161790551661ffff8114610115576001016100a8565b634e487b7160e01b5f52601160045260245ffd5b63d92e233d60e01b5f5260045ffd5b604051610abd90816101e9823960805181818161018801526108800152f35b60208091610164846101ac565b815201910190610080565b5f80fd5b634e487b7160e01b5f52604160045260245ffd5b6040519190601f01601f191682016001600160401b0381118382101761017357604052565b51906001600160a01b038216820361016f57565b80518210156101d45760209160051b010190565b634e487b7160e01b5f52603260045260245ffdfe60806040526004361015610011575f80fd5b5f3560e01c806309918b28146100a45780630c11b5791461009f57806312261ee71461009a578063800e25201461009557806385290e1a146100905780638ab4e3001461008b5780638adbb6b814610086578063bf443333146100815763dacfccac1461007c575f80fd5b6105ff565b610512565b610454565b610402565b610347565b6101e7565b610173565b61012f565b346100e95760603660031901126100e9576100bd6100ed565b6100c56100fe565b6100da604435926100d58461011e565b6109dd565b5f525f60205260405f20555f80f35b5f80fd5b6004359061ffff821682036100e957565b6024359061ffff821682036100e957565b359061ffff821682036100e957565b6001600160a01b038116036100e957565b346100e95760203660031901126100e95761ffff61014b6100ed565b165f525f602052602060018060a01b0360405f205416604051908152f35b5f9103126100e957565b346100e9575f3660031901126100e9576040517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b9181601f840112156100e9578235916001600160401b0383116100e9576020808501948460051b0101116100e957565b346100e95760a03660031901126100e9576102006100ed565b6024356001600160401b0381116100e95761021f9036906004016101b7565b916044356001600160401b0381116100e95761023f9036906004016101b7565b906064356001600160401b0381116100e95761025f9036906004016101b7565b929091608435966001600160401b0388116100e95761028561028d9836906004016101b7565b9790966106b6565b005b634e487b7160e01b5f52604160045260245ffd5b90601f801991011681019081106001600160401b038211176102c457604052565b61028f565b6001600160401b0381116102c45760051b60200190565b9080601f830112156100e95781356102f7816102c9565b9261030560405194856102a3565b81845260208085019260051b8201019283116100e957602001905b82821061032d5750505090565b60208091833561033c8161011e565b815201910190610320565b346100e95760603660031901126100e9576103606100ed565b602435906001600160401b0382116100e957366023830112156100e95781600401359161038c836102c9565b9261039a60405194856102a3565b8084526024602085019160051b830101913683116100e957602401905b8282106103ea57505050604435916001600160401b0383116100e9576103e461028d9336906004016102e0565b91610740565b602080916103f78461010f565b8152019101906103b7565b346100e95760a03660031901126100e95761028d61041e6100ed565b60243561042a8161011e565b6044356104368161011e565b606435916104438361011e565b61044f608435946109dd565b6109fc565b346100e95760a03660031901126100e95761046d6100ed565b6024356104798161011e565b6044356104858161011e565b6064356001600160401b0381116100e9576104a49036906004016101b7565b929093608435926001600160401b0384116100e9576104ca6104d29436906004016101b7565b9490926109dd565b5f5b8581106104dd57005b8061050c6104ee600193898b610692565b356104f88161011e565b610503838988610692565b359085886109fc565b016104d4565b346100e95760a03660031901126100e95761052b6100ed565b6024356001600160401b0381116100e95761054a9036906004016101b7565b916044356105578161011e565b6064356001600160401b0381116100e9576105769036906004016101b7565b91608435956001600160401b0387116100e95761059a61028d9736906004016101b7565b969095610784565b9181601f840112156100e9578235916001600160401b0383116100e9576020808501948460061b0101116100e957565b9181601f840112156100e9578235916001600160401b0383116100e957602083818601950101116100e957565b346100e95760a03660031901126100e9576106186100ed565b6024356106248161011e565b6044356001600160401b0381116100e957606060031982360301126100e9576064356001600160401b0381116100e9576106629036906004016105a2565b90608435946001600160401b0386116100e95761068661028d9636906004016105d2565b9590946004019161086d565b91908110156106a25760051b0190565b634e487b7160e01b5f52603260045260245ffd5b6106ca9099989396999795949291976109dd565b5f5b8981106106df5750505050505050509050565b8061073a888c61071d8461070c818f6106fc60019a8c8e93610692565b35966107078861011e565b610692565b35926107178461011e565b8b610692565b35906107288261011e565b610733858a8d610692565b35926109fc565b016106cc565b61074c909291926109dd565b8151915f5b83811061075e5750505050565b8060019160051b60208082860101519186010151905f525f60205260405f205501610751565b610796909897989694959291966109dd565b5f5b8281106107aa57505050505050509050565b806107e4878b87610733856107d3818f6107c860019b8d8f93610692565b35976107078961011e565b35936107de8561011e565b8c610692565b01610798565b6020809180356107f98161011e565b6001600160a01b031684520135910152565b916020908281520191905f5b8181106108245750505090565b90919260408082610837600194886107ea565b019401929101610817565b908060209392818452848401375f828201840152601f01601f1916010190565b6040513d5f823e3d90fd5b61087e9096939695929194956109dd565b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031694853b156100e95760405163edd9444b60e01b8152608060048201529660e4880192803536829003601e19018112156100e9578101602081359101946001600160401b0382116100e9578160061b360386136100e95790808b99979a989695949392606060848c015252610104890194905f5b8181106109ad57505050935f9861097061095e8a989496610981968a9860408f9b602081013560a48d0152013560c48b01526003198a84030160248b015261080b565b6001600160a01b039094166044870152565b848303600319016064860152610842565b03925af180156109a8576109925750565b806109a05f6109a6936102a3565b80610169565b565b610862565b9196989a97995091929394604080826109c86001948b6107ea565b0197019101918b99979a98969594939261091b565b5f525f60205260405f205433036109f057565b63b81fa7795f5260045ffd5b6040516323b872dd60e01b81526001600160a01b03928316600482015292909116602483015260448201929092526020915f9160649183905af13d15601f3d1160015f511416171615610a4b57565b60405162461bcd60e51b81526020600482015260146024820152731514905394d1915497d19493d357d1905253115160621b6044820152606490fdfea2646970667358221220a5cd061f2c49d45f76e5102f22498b6e03f5e7c254cc9def074584ae46c0d01464736f6c634300081b0033",
+        "sourceMap": "456:10692:37:-:0;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;456:10692:37;;733:22;729:48;;787:18;;-1:-1:-1;930:3:37;456:10692;;;;;;908:20;;;;;;-1:-1:-1;;;;;1043:12:37;;;;:::i;:::-;456:10692;;1043:26;1039:52;;456:10692;;-1:-1:-1;;;;;1119:12:37;456:10692;1119:12;;:::i;:::-;456:10692;;;-1:-1:-1;456:10692:37;-1:-1:-1;456:10692:37;;;-1:-1:-1;456:10692:37;;;;;;;;;;;;;;;;;;;;;;894:12;;456:10692;;;;-1:-1:-1;456:10692:37;;;;;-1:-1:-1;456:10692:37;1039:52;764:13;;;-1:-1:-1;1078:13:37;;-1:-1:-1;1078:13:37;908:20;456:10692;;;;;;;;787:18;456:10692;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;-1:-1:-1;456:10692:37;;;;;;-1:-1:-1;456:10692:37;;;;;-1:-1:-1;456:10692:37;;;;;;;;-1:-1:-1;;456:10692:37;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;:::o;:::-;;;-1:-1:-1;;;;;456:10692:37;;;;;;:::o;:::-;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;",
+        "linkReferences": {}
+    },
+    "deployedBytecode": {
+        "object": "0x60806040526004361015610011575f80fd5b5f3560e01c806309918b28146100a45780630c11b5791461009f57806312261ee71461009a578063800e25201461009557806385290e1a146100905780638ab4e3001461008b5780638adbb6b814610086578063bf443333146100815763dacfccac1461007c575f80fd5b6105ff565b610512565b610454565b610402565b610347565b6101e7565b610173565b61012f565b346100e95760603660031901126100e9576100bd6100ed565b6100c56100fe565b6100da604435926100d58461011e565b6109dd565b5f525f60205260405f20555f80f35b5f80fd5b6004359061ffff821682036100e957565b6024359061ffff821682036100e957565b359061ffff821682036100e957565b6001600160a01b038116036100e957565b346100e95760203660031901126100e95761ffff61014b6100ed565b165f525f602052602060018060a01b0360405f205416604051908152f35b5f9103126100e957565b346100e9575f3660031901126100e9576040517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b9181601f840112156100e9578235916001600160401b0383116100e9576020808501948460051b0101116100e957565b346100e95760a03660031901126100e9576102006100ed565b6024356001600160401b0381116100e95761021f9036906004016101b7565b916044356001600160401b0381116100e95761023f9036906004016101b7565b906064356001600160401b0381116100e95761025f9036906004016101b7565b929091608435966001600160401b0388116100e95761028561028d9836906004016101b7565b9790966106b6565b005b634e487b7160e01b5f52604160045260245ffd5b90601f801991011681019081106001600160401b038211176102c457604052565b61028f565b6001600160401b0381116102c45760051b60200190565b9080601f830112156100e95781356102f7816102c9565b9261030560405194856102a3565b81845260208085019260051b8201019283116100e957602001905b82821061032d5750505090565b60208091833561033c8161011e565b815201910190610320565b346100e95760603660031901126100e9576103606100ed565b602435906001600160401b0382116100e957366023830112156100e95781600401359161038c836102c9565b9261039a60405194856102a3565b8084526024602085019160051b830101913683116100e957602401905b8282106103ea57505050604435916001600160401b0383116100e9576103e461028d9336906004016102e0565b91610740565b602080916103f78461010f565b8152019101906103b7565b346100e95760a03660031901126100e95761028d61041e6100ed565b60243561042a8161011e565b6044356104368161011e565b606435916104438361011e565b61044f608435946109dd565b6109fc565b346100e95760a03660031901126100e95761046d6100ed565b6024356104798161011e565b6044356104858161011e565b6064356001600160401b0381116100e9576104a49036906004016101b7565b929093608435926001600160401b0384116100e9576104ca6104d29436906004016101b7565b9490926109dd565b5f5b8581106104dd57005b8061050c6104ee600193898b610692565b356104f88161011e565b610503838988610692565b359085886109fc565b016104d4565b346100e95760a03660031901126100e95761052b6100ed565b6024356001600160401b0381116100e95761054a9036906004016101b7565b916044356105578161011e565b6064356001600160401b0381116100e9576105769036906004016101b7565b91608435956001600160401b0387116100e95761059a61028d9736906004016101b7565b969095610784565b9181601f840112156100e9578235916001600160401b0383116100e9576020808501948460061b0101116100e957565b9181601f840112156100e9578235916001600160401b0383116100e957602083818601950101116100e957565b346100e95760a03660031901126100e9576106186100ed565b6024356106248161011e565b6044356001600160401b0381116100e957606060031982360301126100e9576064356001600160401b0381116100e9576106629036906004016105a2565b90608435946001600160401b0386116100e95761068661028d9636906004016105d2565b9590946004019161086d565b91908110156106a25760051b0190565b634e487b7160e01b5f52603260045260245ffd5b6106ca9099989396999795949291976109dd565b5f5b8981106106df5750505050505050509050565b8061073a888c61071d8461070c818f6106fc60019a8c8e93610692565b35966107078861011e565b610692565b35926107178461011e565b8b610692565b35906107288261011e565b610733858a8d610692565b35926109fc565b016106cc565b61074c909291926109dd565b8151915f5b83811061075e5750505050565b8060019160051b60208082860101519186010151905f525f60205260405f205501610751565b610796909897989694959291966109dd565b5f5b8281106107aa57505050505050509050565b806107e4878b87610733856107d3818f6107c860019b8d8f93610692565b35976107078961011e565b35936107de8561011e565b8c610692565b01610798565b6020809180356107f98161011e565b6001600160a01b031684520135910152565b916020908281520191905f5b8181106108245750505090565b90919260408082610837600194886107ea565b019401929101610817565b908060209392818452848401375f828201840152601f01601f1916010190565b6040513d5f823e3d90fd5b61087e9096939695929194956109dd565b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031694853b156100e95760405163edd9444b60e01b8152608060048201529660e4880192803536829003601e19018112156100e9578101602081359101946001600160401b0382116100e9578160061b360386136100e95790808b99979a989695949392606060848c015252610104890194905f5b8181106109ad57505050935f9861097061095e8a989496610981968a9860408f9b602081013560a48d0152013560c48b01526003198a84030160248b015261080b565b6001600160a01b039094166044870152565b848303600319016064860152610842565b03925af180156109a8576109925750565b806109a05f6109a6936102a3565b80610169565b565b610862565b9196989a97995091929394604080826109c86001948b6107ea565b0197019101918b99979a98969594939261091b565b5f525f60205260405f205433036109f057565b63b81fa7795f5260045ffd5b6040516323b872dd60e01b81526001600160a01b03928316600482015292909116602483015260448201929092526020915f9160649183905af13d15601f3d1160015f511416171615610a4b57565b60405162461bcd60e51b81526020600482015260146024820152731514905394d1915497d19493d357d1905253115160621b6044820152606490fdfea2646970667358221220a5cd061f2c49d45f76e5102f22498b6e03f5e7c254cc9def074584ae46c0d01464736f6c634300081b0033",
+        "sourceMap": "456:10692:37:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;:::i;:::-;;:::i;:::-;;:::i;:::-;;:::i;:::-;;:::i;:::-;;:::i;:::-;;;;;;-1:-1:-1;;456:10692:37;;;;;;:::i;:::-;;;:::i;:::-;8125:18;456:10692;;;;;;:::i;:::-;8125:18;:::i;:::-;456:10692;9821:193;456:10692;;9821:193;456:10692;;9821:193;;456:10692;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;:::o;:::-;;;;;;;;;;:::o;:::-;-1:-1:-1;;;;;456:10692:37;;;;;:::o;:::-;;;;;;-1:-1:-1;;456:10692:37;;;;;;;:::i;:::-;;-1:-1:-1;456:10692:37;-1:-1:-1;456:10692:37;;;;;;;;;-1:-1:-1;456:10692:37;;;;;;;;;;;;;;;;:::o;:::-;;;;;;-1:-1:-1;;456:10692:37;;;;;;506:32;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;-1:-1:-1;;456:10692:37;;;;;;:::i;:::-;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;:::i;:::-;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;:::i;:::-;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;:::o;:::-;;:::i;:::-;-1:-1:-1;;;;;456:10692:37;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;-1:-1:-1;;456:10692:37;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;:::i;:::-;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;;;;;;;;-1:-1:-1;;456:10692:37;;;;3782:6;456:10692;;:::i;:::-;;;;;;:::i;:::-;;;;;;:::i;:::-;;;;;;;:::i;:::-;3659:12;456:10692;;3659:12;;:::i;:::-;3782:6;:::i;456:10692::-;;;;;;-1:-1:-1;;456:10692:37;;;;;;:::i;:::-;;;;;;:::i;:::-;;;;;;:::i;:::-;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;:::i;:::-;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;6275:12;456:10692;;;;;;:::i;:::-;6275:12;;;;:::i;:::-;6316:1;6319:14;;;;;;456:10692;6335:3;6400:6;6408:10;6400:6;456:10692;6400:6;;;;:::i;:::-;456:10692;;;;:::i;:::-;6408:10;;;;;:::i;:::-;456:10692;6408:10;;;;:::i;:::-;456:10692;6304:13;;456:10692;;;;;;-1:-1:-1;;456:10692:37;;;;;;:::i;:::-;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;:::i;:::-;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;:::i;:::-;;;;;:::i;:::-;;;;;;;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;;;;:::o;:::-;;;;;;-1:-1:-1;;456:10692:37;;;;;;:::i;:::-;;;;;;:::i;:::-;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;:::i;:::-;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;:::i;:::-;;;;;;;;:::i;:::-;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;2052:450;2333:12;2052:450;;;;;;;;;;;;2333:12;:::i;:::-;2374:1;2377:14;;;;;;2052:450;;;;;;;;;;:::o;2393:3::-;2445:9;2474:10;2445:9;;2466:6;2445:9;2456:8;2445:9;;;456:10692;2445:9;;;;;:::i;:::-;456:10692;;;;;:::i;:::-;2456:8;:::i;:::-;456:10692;;;;;:::i;:::-;2466:6;;:::i;:::-;456:10692;;;;;:::i;:::-;2474:10;;;;;:::i;:::-;456:10692;2474:10;;:::i;:::-;456:10692;2362:13;;8509:285;8661:18;8509:285;;;;8661:18;:::i;:::-;10176:964;;;;;;;;;;8509:285;;;;:::o;10176:964::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7336:434;7605:12;7336:434;;;;;;;;;;7605:12;:::i;:::-;7646:1;7649:14;;;;;;7336:434;;;;;;;;;:::o;7665:3::-;7717:9;7742:10;7717:9;;;7742:10;7717:9;7734:6;7717:9;;;456:10692;7717:9;;;;;:::i;:::-;456:10692;;;;;:::i;7734:6::-;456:10692;;;;;:::i;:::-;7742:10;;:::i;:::-;456:10692;7634:13;;456:10692;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;456:10692:37;;;;;;;;:::o;:::-;;;;;;;;;;-1:-1:-1;456:10692:37;;;;;;;;;;:::o;:::-;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;456:10692:37;;;;;;;;-1:-1:-1;;456:10692:37;;;;:::o;:::-;;;;;;;;;;4601:527;4960:12;4601:527;;;;;;;;;4960:12;:::i;:::-;5052:7;-1:-1:-1;;;;;456:10692:37;;5033:88;;;;;456:10692;;-1:-1:-1;;;5033:88:37;;456:10692;5033:88;;;456:10692;;;;;;;;;;;;-1:-1:-1;;456:10692:37;;;;;;;;;;;;;;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;456:10692:37;;;;;;;;;;-1:-1:-1;456:10692:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;456:10692:37;;;;;;;;;;;;-1:-1:-1;;456:10692:37;;;;;;:::i;:::-;5033:88;;;;;;;;;;4601:527;:::o;5033:88::-;;;-1:-1:-1;5033:88:37;;;:::i;:::-;;;:::i;:::-;4601:527::o;5033:88::-;;:::i;456:10692::-;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;9028:710;9094:638;;;;;;;;;;;;;9028:710::o;9094:638::-;;;;;;;1328:1782:36;1532:1521;;-1:-1:-1;;;1532:1521:36;;-1:-1:-1;;;;;1532:1521:36;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;1532:1521:36;;-1:-1:-1;;1532:1521:36;;;;;;;;-1:-1:-1;1532:1521:36;;;;;456:10692:37;;;1328:1782:36:o;456:10692:37:-;1532:1521:36;456:10692:37;-1:-1:-1;;;456:10692:37;;1532:1521:36;;456:10692:37;;;;1532:1521:36;456:10692:37;;;-1:-1:-1;;;1532:1521:36;456:10692:37;;;1532:1521:36;;456:10692:37",
+        "linkReferences": {},
+        "immutableReferences": {
+            "47545": [
+                {
+                    "start": 392,
+                    "length": 32
+                },
+                {
+                    "start": 2176,
+                    "length": 32
+                }
+            ]
+        }
+    },
+    "methodIdentifiers": {
+        "batchPaymentMSMT(uint16,address[],address[],address[],uint256[])": "800e2520",
+        "batchPaymentSSMT(uint16,address[],address,address[],uint256[])": "bf443333",
+        "batchPaymentSSST(uint16,address,address,address[],uint256[])": "8adbb6b8",
+        "permit2()": "12261ee7",
+        "relayers(uint16)": "0c11b579",
+        "setRelayer(uint16,uint16,address)": "09918b28",
+        "setRelayers(uint16,uint16[],address[])": "85290e1a",
+        "singlePaymentSSSTSR(uint16,address,address,address,uint256)": "8ab4e300",
+        "singlePaymentSSSTSRPermit(uint16,address,((address,uint256)[],uint256,uint256),(address,uint256)[],bytes)": "dacfccac"
+    },
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.27+commit.40a35a09\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_relayers\",\"type\":\"address[]\"},{\"internalType\":\"address\",\"name\":\"_permit2\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"InvalidRelayer\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ZeroAddress\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"relayerIndex\",\"type\":\"uint16\"},{\"internalType\":\"contract ERC20[]\",\"name\":\"tokens\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"froms\",\"type\":\"address[]\"},{\"internalType\":\"address[]\",\"name\":\"tos\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"name\":\"batchPaymentMSMT\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"relayerIndex\",\"type\":\"uint16\"},{\"internalType\":\"contract ERC20[]\",\"name\":\"tokens\",\"type\":\"address[]\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"tos\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"name\":\"batchPaymentSSMT\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"relayerIndex\",\"type\":\"uint16\"},{\"internalType\":\"contract ERC20\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address[]\",\"name\":\"tos\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"name\":\"batchPaymentSSST\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"permit2\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"name\":\"relayers\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"callerRelayerIndex\",\"type\":\"uint16\"},{\"internalType\":\"uint16\",\"name\":\"relayerIndex\",\"type\":\"uint16\"},{\"internalType\":\"address\",\"name\":\"relayer\",\"type\":\"address\"}],\"name\":\"setRelayer\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"callerRelayerIndex\",\"type\":\"uint16\"},{\"internalType\":\"uint16[]\",\"name\":\"relayerIndices\",\"type\":\"uint16[]\"},{\"internalType\":\"address[]\",\"name\":\"_relayers\",\"type\":\"address[]\"}],\"name\":\"setRelayers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"relayerIndex\",\"type\":\"uint16\"},{\"internalType\":\"contract ERC20\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"singlePaymentSSSTSR\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"relayerIndex\",\"type\":\"uint16\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"components\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"struct ISignatureTransfer.TokenPermissions[]\",\"name\":\"permitted\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256\",\"name\":\"nonce\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"internalType\":\"struct ISignatureTransfer.PermitBatchTransferFrom\",\"name\":\"permit\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"requestedAmount\",\"type\":\"uint256\"}],\"internalType\":\"struct ISignatureTransfer.SignatureTransferDetails[]\",\"name\":\"transferDetails\",\"type\":\"tuple[]\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"name\":\"singlePaymentSSSTSRPermit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This contract has BundlePay + below features:      - Permit2 contract call for payers using NC wallet.\",\"kind\":\"dev\",\"methods\":{\"batchPaymentMSMT(uint16,address[],address[],address[],uint256[])\":{\"details\":\"Performs a batch of `transferFrom` operations on multiple ERC20 tokens from multiple senders to multiple recipients.      The caller must have approved this contract to spend the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.\",\"params\":{\"amounts\":\"An array of token amounts to be transferred to each recipient.\",\"froms\":\"An array of addresses from which the tokens will be transferred.\",\"relayerIndex\":\"The index of the relayer.\",\"tokens\":\"An array of ERC20 tokens to be transferred.\",\"tos\":\"An array of addresses to which the tokens will be transferred.\"}},\"batchPaymentSSMT(uint16,address[],address,address[],uint256[])\":{\"details\":\"Performs a batch of `transferFrom` operations from a single sender to multiple recipients on multiple tokens.      The contract must have prior approval from the sender to transfer the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.\",\"params\":{\"amounts\":\"An array of token amounts to be transferred to each recipient.\",\"from\":\"The address from which the tokens will be transferred.\",\"relayerIndex\":\"The index of the relayer.\",\"tokens\":\"An array of ERC20 tokens to be transferred.\",\"tos\":\"An array of addresses to which the tokens will be transferred.\"}},\"batchPaymentSSST(uint16,address,address,address[],uint256[])\":{\"details\":\"Performs a batch of `transferFrom` operations from a single sender to multiple recipients on single token.      The contract must have prior approval from the sender to transfer the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.\",\"params\":{\"amounts\":\"An array of token amounts to be transferred to each recipient.\",\"from\":\"The address from which the tokens will be transferred.\",\"relayerIndex\":\"The index of the relayer.\",\"token\":\"The ERC20 token to be transferred.\",\"tos\":\"An array of addresses to which the tokens will be transferred.\"}},\"setRelayer(uint16,uint16,address)\":{\"params\":{\"callerRelayerIndex\":\"The index of the caller relayer.\",\"relayer\":\"The address of the relayer to be set.\",\"relayerIndex\":\"The index of the relayer to be set.\"}},\"setRelayers(uint16,uint16[],address[])\":{\"params\":{\"_relayers\":\"The addresses of the relayers to be set.\",\"callerRelayerIndex\":\"The index of the caller relayer.\",\"relayerIndices\":\"The indices of the relayers to be set.\"}},\"singlePaymentSSSTSR(uint16,address,address,address,uint256)\":{\"details\":\"Performs a `transferFrom` operation from a single sender to single recipient on single token.      The contract must have prior approval from the sender to transfer the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.      NOTE: Unlike `batchPaymentSSSTMR`, for-loop is avoided resulting into lesser gas.\",\"params\":{\"amount\":\"The token amount to be transferred to each recipient.\",\"from\":\"The address from which the tokens will be transferred.\",\"relayerIndex\":\"The index of the relayer.\",\"to\":\"The address to which the tokens will be transferred.\",\"token\":\"The ERC20 token to be transferred.\"}},\"singlePaymentSSSTSRPermit(uint16,address,((address,uint256)[],uint256,uint256),(address,uint256)[],bytes)\":{\"details\":\"Performs a `transferFrom` operation from a single sender to single recipient on single token.      The contract must have prior approval from the sender to transfer the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.      NOTE: Unlike `batchPaymentSSSTMR`, for-loop is avoided resulting into lesser gas.\",\"params\":{\"permit\":\"The permit signed by Sender to send amount & fees. That's why used PermitBatch...\",\"relayerIndex\":\"The index of the relayer.\"}}},\"title\":\"BundlePayV2\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"batchPaymentMSMT(uint16,address[],address[],address[],uint256[])\":{\"notice\":\"Multi Sender Multi Token (MSMT)\"},\"batchPaymentSSMT(uint16,address[],address,address[],uint256[])\":{\"notice\":\"Single Sender Multi Token (SSMT)\"},\"batchPaymentSSST(uint16,address,address,address[],uint256[])\":{\"notice\":\"Single Sender Single Token (SSSTMR)\"},\"setRelayer(uint16,uint16,address)\":{\"notice\":\"Set relayer\"},\"setRelayers(uint16,uint16[],address[])\":{\"notice\":\"Set relayers\"},\"singlePaymentSSSTSR(uint16,address,address,address,uint256)\":{\"notice\":\"Single Sender Single Token Single Recipient (SSSTSR)\"},\"singlePaymentSSSTSRPermit(uint16,address,((address,uint256)[],uint256,uint256),(address,uint256)[],bytes)\":{\"notice\":\"Single Sender Single Token Single Recipient (SSSTSRP) Permit2\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/BundlePayV2.sol\":\"BundlePayV2\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-gas-snapshot/=lib/permit2/lib/forge-gas-snapshot/src/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":permit2/=lib/permit2/\",\":solmate/=lib/solmate/\"],\"viaIR\":true},\"sources\":{\"lib/forge-std/src/console2.sol\":{\"keccak256\":\"0x954646445d1014c3cd85c7918f5e7adeeca5ee44b68c00bafa237e597a4e35ea\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://516fa3be52da4763147175bfba4be0aa011fadbb0c1afb01f97265bd4cee7973\",\"dweb:/ipfs/QmdixAyMJefx7qePChgdxcBH5MxhmN7vsqPuPLx3CgrVmF\"]},\"lib/permit2/src/interfaces/IEIP712.sol\":{\"keccak256\":\"0xfdccf2b9639070803cd0e4198427fb0df3cc452ca59bd3b8a0d957a9a4254138\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f7c936ac42ce89e827db905a1544397f8bdf46db34cdb6aa1b90dea42fdb4c72\",\"dweb:/ipfs/QmVgurxo1N31qZqkPBirw9Z7S9tLYmv6jSwQp8R8ur2cBk\"]},\"lib/permit2/src/interfaces/ISignatureTransfer.sol\":{\"keccak256\":\"0xe6df9966f8841dc3958ee86169c89de97e7f614c81c28b9dc947b12d732df64e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3d4eafdee7f48c3be8350a94eb6edd0bfb2af2c105df65787a77174f356c0317\",\"dweb:/ipfs/QmY1j2adeeAhNpn6cUuthemxGCdLXHTfyMh9yTKsY4mZ2d\"]},\"lib/solmate/src/tokens/ERC20.sol\":{\"keccak256\":\"0xcdfd8db76b2a3415620e4d18cc5545f3d50de792dbf2c3dd5adb40cbe6f94b10\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://57b3ab70cde374af1cf2c9888636e8de6cf660f087b1c9abd805e9271e19fa35\",\"dweb:/ipfs/QmNrLDBAHYFjpjSd12jerm1AdBkDqEYUUaXgnT854BUZ97\"]},\"lib/solmate/src/utils/SafeTransferLib.sol\":{\"keccak256\":\"0x6ab948013c2c7ca6351e593600425b0ec6df9035320280c678e735bce16e996b\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://2ab977d0eeb2bf458f9798250215c646d2f3b1f90b5a7e2b506fdf3335c0f060\",\"dweb:/ipfs/QmYPRoPhNtBAmCSq7imN1scMVpKNQvMTpoqab3tXUx5Tnv\"]},\"src/BundlePayV2.sol\":{\"keccak256\":\"0x5e1dd701c2599635bf1b90c847d2077ec535d4d12441e7a8db3731bcd935570c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fc3ed131d2cb2e6859bb643777ddd611f3c4baa6be140685e665326d388c6be9\",\"dweb:/ipfs/QmbQKnGABwxgYwFHHVu33VMmh5Ca1ZXJGpexJh6nwiGqBY\"]}},\"version\":1}",
+    "metadata": {
+        "compiler": {
+            "version": "0.8.27+commit.40a35a09"
+        },
+        "language": "Solidity",
+        "output": {
+            "abi": [
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address[]",
+                            "name": "_relayers",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "_permit2",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "constructor"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "InvalidRelayer"
+                },
+                {
+                    "inputs": [],
+                    "type": "error",
+                    "name": "ZeroAddress"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint16",
+                            "name": "relayerIndex",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "contract ERC20[]",
+                            "name": "tokens",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "froms",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "tos",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "amounts",
+                            "type": "uint256[]"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "batchPaymentMSMT"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint16",
+                            "name": "relayerIndex",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "contract ERC20[]",
+                            "name": "tokens",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "tos",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "amounts",
+                            "type": "uint256[]"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "batchPaymentSSMT"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint16",
+                            "name": "relayerIndex",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "contract ERC20",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "tos",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "amounts",
+                            "type": "uint256[]"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "batchPaymentSSST"
+                },
+                {
+                    "inputs": [],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "permit2",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint16",
+                            "name": "",
+                            "type": "uint16"
+                        }
+                    ],
+                    "stateMutability": "view",
+                    "type": "function",
+                    "name": "relayers",
+                    "outputs": [
+                        {
+                            "internalType": "address",
+                            "name": "",
+                            "type": "address"
+                        }
+                    ]
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint16",
+                            "name": "callerRelayerIndex",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "relayerIndex",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "relayer",
+                            "type": "address"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "setRelayer"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint16",
+                            "name": "callerRelayerIndex",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16[]",
+                            "name": "relayerIndices",
+                            "type": "uint16[]"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "_relayers",
+                            "type": "address[]"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "setRelayers"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint16",
+                            "name": "relayerIndex",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "contract ERC20",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "to",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "singlePaymentSSSTSR"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "uint16",
+                            "name": "relayerIndex",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "from",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "struct ISignatureTransfer.PermitBatchTransferFrom",
+                            "name": "permit",
+                            "type": "tuple",
+                            "components": [
+                                {
+                                    "internalType": "struct ISignatureTransfer.TokenPermissions[]",
+                                    "name": "permitted",
+                                    "type": "tuple[]",
+                                    "components": [
+                                        {
+                                            "internalType": "address",
+                                            "name": "token",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "amount",
+                                            "type": "uint256"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "nonce",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "deadline",
+                                    "type": "uint256"
+                                }
+                            ]
+                        },
+                        {
+                            "internalType": "struct ISignatureTransfer.SignatureTransferDetails[]",
+                            "name": "transferDetails",
+                            "type": "tuple[]",
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "to",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "requestedAmount",
+                                    "type": "uint256"
+                                }
+                            ]
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "signature",
+                            "type": "bytes"
+                        }
+                    ],
+                    "stateMutability": "nonpayable",
+                    "type": "function",
+                    "name": "singlePaymentSSSTSRPermit"
+                }
+            ],
+            "devdoc": {
+                "kind": "dev",
+                "methods": {
+                    "batchPaymentMSMT(uint16,address[],address[],address[],uint256[])": {
+                        "details": "Performs a batch of `transferFrom` operations on multiple ERC20 tokens from multiple senders to multiple recipients.      The caller must have approved this contract to spend the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.",
+                        "params": {
+                            "amounts": "An array of token amounts to be transferred to each recipient.",
+                            "froms": "An array of addresses from which the tokens will be transferred.",
+                            "relayerIndex": "The index of the relayer.",
+                            "tokens": "An array of ERC20 tokens to be transferred.",
+                            "tos": "An array of addresses to which the tokens will be transferred."
+                        }
+                    },
+                    "batchPaymentSSMT(uint16,address[],address,address[],uint256[])": {
+                        "details": "Performs a batch of `transferFrom` operations from a single sender to multiple recipients on multiple tokens.      The contract must have prior approval from the sender to transfer the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.",
+                        "params": {
+                            "amounts": "An array of token amounts to be transferred to each recipient.",
+                            "from": "The address from which the tokens will be transferred.",
+                            "relayerIndex": "The index of the relayer.",
+                            "tokens": "An array of ERC20 tokens to be transferred.",
+                            "tos": "An array of addresses to which the tokens will be transferred."
+                        }
+                    },
+                    "batchPaymentSSST(uint16,address,address,address[],uint256[])": {
+                        "details": "Performs a batch of `transferFrom` operations from a single sender to multiple recipients on single token.      The contract must have prior approval from the sender to transfer the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.",
+                        "params": {
+                            "amounts": "An array of token amounts to be transferred to each recipient.",
+                            "from": "The address from which the tokens will be transferred.",
+                            "relayerIndex": "The index of the relayer.",
+                            "token": "The ERC20 token to be transferred.",
+                            "tos": "An array of addresses to which the tokens will be transferred."
+                        }
+                    },
+                    "setRelayer(uint16,uint16,address)": {
+                        "params": {
+                            "callerRelayerIndex": "The index of the caller relayer.",
+                            "relayer": "The address of the relayer to be set.",
+                            "relayerIndex": "The index of the relayer to be set."
+                        }
+                    },
+                    "setRelayers(uint16,uint16[],address[])": {
+                        "params": {
+                            "_relayers": "The addresses of the relayers to be set.",
+                            "callerRelayerIndex": "The index of the caller relayer.",
+                            "relayerIndices": "The indices of the relayers to be set."
+                        }
+                    },
+                    "singlePaymentSSSTSR(uint16,address,address,address,uint256)": {
+                        "details": "Performs a `transferFrom` operation from a single sender to single recipient on single token.      The contract must have prior approval from the sender to transfer the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.      NOTE: Unlike `batchPaymentSSSTMR`, for-loop is avoided resulting into lesser gas.",
+                        "params": {
+                            "amount": "The token amount to be transferred to each recipient.",
+                            "from": "The address from which the tokens will be transferred.",
+                            "relayerIndex": "The index of the relayer.",
+                            "to": "The address to which the tokens will be transferred.",
+                            "token": "The ERC20 token to be transferred."
+                        }
+                    },
+                    "singlePaymentSSSTSRPermit(uint16,address,((address,uint256)[],uint256,uint256),(address,uint256)[],bytes)": {
+                        "details": "Performs a `transferFrom` operation from a single sender to single recipient on single token.      The contract must have prior approval from the sender to transfer the specified amounts on their behalf.      NOTE: Only the contract owner can call this function due to security reasons. So, the contract owner (caller)      shall just pay the gas but the contract is the spender as it is calling the transferFrom function.      NOTE: Unlike `batchPaymentSSSTMR`, for-loop is avoided resulting into lesser gas.",
+                        "params": {
+                            "permit": "The permit signed by Sender to send amount & fees. That's why used PermitBatch...",
+                            "relayerIndex": "The index of the relayer."
+                        }
+                    }
+                },
+                "version": 1
+            },
+            "userdoc": {
+                "kind": "user",
+                "methods": {
+                    "batchPaymentMSMT(uint16,address[],address[],address[],uint256[])": {
+                        "notice": "Multi Sender Multi Token (MSMT)"
+                    },
+                    "batchPaymentSSMT(uint16,address[],address,address[],uint256[])": {
+                        "notice": "Single Sender Multi Token (SSMT)"
+                    },
+                    "batchPaymentSSST(uint16,address,address,address[],uint256[])": {
+                        "notice": "Single Sender Single Token (SSSTMR)"
+                    },
+                    "setRelayer(uint16,uint16,address)": {
+                        "notice": "Set relayer"
+                    },
+                    "setRelayers(uint16,uint16[],address[])": {
+                        "notice": "Set relayers"
+                    },
+                    "singlePaymentSSSTSR(uint16,address,address,address,uint256)": {
+                        "notice": "Single Sender Single Token Single Recipient (SSSTSR)"
+                    },
+                    "singlePaymentSSSTSRPermit(uint16,address,((address,uint256)[],uint256,uint256),(address,uint256)[],bytes)": {
+                        "notice": "Single Sender Single Token Single Recipient (SSSTSRP) Permit2"
+                    }
+                },
+                "version": 1
+            }
+        },
+        "settings": {
+            "remappings": [
+                "ds-test/=lib/forge-std/lib/ds-test/src/",
+                "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+                "forge-gas-snapshot/=lib/permit2/lib/forge-gas-snapshot/src/",
+                "forge-std/=lib/forge-std/src/",
+                "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+                "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+                "permit2/=lib/permit2/",
+                "solmate/=lib/solmate/"
+            ],
+            "optimizer": {
+                "enabled": true,
+                "runs": 200
+            },
+            "metadata": {
+                "bytecodeHash": "ipfs"
+            },
+            "compilationTarget": {
+                "src/BundlePayV2.sol": "BundlePayV2"
+            },
+            "evmVersion": "cancun",
+            "libraries": {},
+            "viaIR": true
+        },
+        "sources": {
+            "lib/forge-std/src/console2.sol": {
+                "keccak256": "0x954646445d1014c3cd85c7918f5e7adeeca5ee44b68c00bafa237e597a4e35ea",
+                "urls": [
+                    "bzz-raw://516fa3be52da4763147175bfba4be0aa011fadbb0c1afb01f97265bd4cee7973",
+                    "dweb:/ipfs/QmdixAyMJefx7qePChgdxcBH5MxhmN7vsqPuPLx3CgrVmF"
+                ],
+                "license": "MIT"
+            },
+            "lib/permit2/src/interfaces/IEIP712.sol": {
+                "keccak256": "0xfdccf2b9639070803cd0e4198427fb0df3cc452ca59bd3b8a0d957a9a4254138",
+                "urls": [
+                    "bzz-raw://f7c936ac42ce89e827db905a1544397f8bdf46db34cdb6aa1b90dea42fdb4c72",
+                    "dweb:/ipfs/QmVgurxo1N31qZqkPBirw9Z7S9tLYmv6jSwQp8R8ur2cBk"
+                ],
+                "license": "MIT"
+            },
+            "lib/permit2/src/interfaces/ISignatureTransfer.sol": {
+                "keccak256": "0xe6df9966f8841dc3958ee86169c89de97e7f614c81c28b9dc947b12d732df64e",
+                "urls": [
+                    "bzz-raw://3d4eafdee7f48c3be8350a94eb6edd0bfb2af2c105df65787a77174f356c0317",
+                    "dweb:/ipfs/QmY1j2adeeAhNpn6cUuthemxGCdLXHTfyMh9yTKsY4mZ2d"
+                ],
+                "license": "MIT"
+            },
+            "lib/solmate/src/tokens/ERC20.sol": {
+                "keccak256": "0xcdfd8db76b2a3415620e4d18cc5545f3d50de792dbf2c3dd5adb40cbe6f94b10",
+                "urls": [
+                    "bzz-raw://57b3ab70cde374af1cf2c9888636e8de6cf660f087b1c9abd805e9271e19fa35",
+                    "dweb:/ipfs/QmNrLDBAHYFjpjSd12jerm1AdBkDqEYUUaXgnT854BUZ97"
+                ],
+                "license": "AGPL-3.0-only"
+            },
+            "lib/solmate/src/utils/SafeTransferLib.sol": {
+                "keccak256": "0x6ab948013c2c7ca6351e593600425b0ec6df9035320280c678e735bce16e996b",
+                "urls": [
+                    "bzz-raw://2ab977d0eeb2bf458f9798250215c646d2f3b1f90b5a7e2b506fdf3335c0f060",
+                    "dweb:/ipfs/QmYPRoPhNtBAmCSq7imN1scMVpKNQvMTpoqab3tXUx5Tnv"
+                ],
+                "license": "AGPL-3.0-only"
+            },
+            "src/BundlePayV2.sol": {
+                "keccak256": "0x5e1dd701c2599635bf1b90c847d2077ec535d4d12441e7a8db3731bcd935570c",
+                "urls": [
+                    "bzz-raw://fc3ed131d2cb2e6859bb643777ddd611f3c4baa6be140685e665326d388c6be9",
+                    "dweb:/ipfs/QmbQKnGABwxgYwFHHVu33VMmh5Ca1ZXJGpexJh6nwiGqBY"
+                ],
+                "license": "MIT"
+            }
+        },
+        "version": 1
+    },
+    "id": 37
+}
