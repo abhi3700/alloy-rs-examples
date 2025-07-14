@@ -1,4 +1,8 @@
-//! Example of how to transfer ERC20 tokens from one account to another using a signed permit.
+//! Pay via SSSTSR Permit
+//!
+//! Using `BundlePay::singlePaymentSSSTSRPermit` fn,
+//! Alice pay Bob & also pay the fees to Admin in the same tx.
+//! The entire payment was sponsored by a Relayer.
 
 use alloy::{
     network::EthereumWallet,
