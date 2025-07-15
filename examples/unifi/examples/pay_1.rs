@@ -83,7 +83,7 @@ async fn main() -> Result<()> {
     println!("Sent approval by Alice: {tx_hash}");
 
     // BundlePayV2
-    let bpay_address = Address::from_str("0x3D04219ff10b18B8a657EC1f788796CE5FEdc293")?;
+    let bpay_address = Address::from_str("0x49940C92C6A679Ef59117cF307E5340AD1F134E9")?;
     let bundle_pay = BundlePayV2::new(bpay_address, provider.clone());
 
     let amount = U256::from(100);
@@ -112,7 +112,7 @@ async fn main() -> Result<()> {
         create_transfer_details(&[bob.address(), admin_address], &[amount, fee])?;
 
     let tx_hash = bundle_pay
-        .singlePaymentSSSTSRPermit(1, alice.address(), permit.into(), transfers_details, signature)
+        .batchPaymentSSPermit(1, alice.address(), permit.into(), transfers_details, signature)
         .from(relayer1_addr) // the spender of the permit must be the msg.sender (caller)
         .send()
         .await?
